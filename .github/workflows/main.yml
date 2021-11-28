@@ -4,4 +4,8 @@ jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
+    - uses: hashicorp/setup-terraform@v1
+      with:
+        terraform_version: 1
+    - name: check terraform
+      run: terraform version
