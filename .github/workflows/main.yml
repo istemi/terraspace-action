@@ -4,7 +4,8 @@ jobs:
   TerraSpace-Deploy-Actions:
     runs-on: ubuntu-latest
     steps:
-    - uses: hashicorp/setup-terraform@v1
+    - name: install terraform
+      uses: hashicorp/setup-terraform@v1
       with:
         terraform_version: 1
     - name: check terraform
@@ -13,3 +14,5 @@ jobs:
       run: sudo gem install terraspace
     - name: check terraspace
       run: terraspace check_setup
+    - name: test terraspace
+      run: terraspace new project infra --plugin google --examples
