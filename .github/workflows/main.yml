@@ -10,6 +10,6 @@ jobs:
     - name: check terraform
       run: terraform version
     - name: install terraspace
-      run: gem install terraspace
+      run: sudo gem install terraspace
     - name: check terraspace
       run: terraspace check_setup
